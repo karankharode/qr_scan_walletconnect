@@ -1,5 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:qr_scan/data/models/scanned_uri.dart';
+import 'package:qr_scan/data/locals/scanned_uri.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:walletconnect_flutter_v2/walletconnect_flutter_v2.dart';
 
@@ -33,6 +34,12 @@ void main() {
       Uri uri = Uri.parse(mockUri);
 
       PairingInfo pairingInfo = await web3Wallet.pair(uri: uri);
+
+      debugPrint("pairingInfo.relay.protocol: ${pairingInfo.relay.protocol}");
+      debugPrint("scannedData.scannedRelayProtocol: ${scannedData.scannedRelayProtocol}\n");
+
+      debugPrint("pairingInfo.topic: ${pairingInfo.topic}");
+      debugPrint("scannedData.scannedTopic: ${scannedData.scannedTopic}");
 
       expect(pairingInfo.relay.protocol, scannedData.scannedRelayProtocol);
       expect(pairingInfo.topic, scannedData.scannedTopic);
