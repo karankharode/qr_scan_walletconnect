@@ -81,6 +81,7 @@ flutter-app/
 |- ios
 |- lib
 |- test
+|- apk
 ```
 
 Here is the folder structure we have been using in this project
@@ -192,6 +193,14 @@ expect(pairingInfo.relay.protocol, scannedData.scannedRelayProtocol);
 expect(pairingInfo.topic, scannedData.scannedTopic);
 ```
 
+### Test APK
+
+```
+apk/
+    |- QR_Scan_Test.dart
+```
+
+This directory contains the sample test apk built from the code of this repository.
 
 
 ## Conclusion
