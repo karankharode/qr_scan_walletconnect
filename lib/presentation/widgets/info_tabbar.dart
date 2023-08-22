@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qr_scan/presentation/bloc/pairing/pairing_bloc.dart';
+import 'package:qr_scan/bloc/pairing/pairing_bloc.dart';
 import 'package:qr_scan/presentation/utils/core_import.dart';
 import 'package:qr_scan/presentation/utils/themes.dart';
 import 'package:qr_scan/presentation/widgets/custom_container.dart';

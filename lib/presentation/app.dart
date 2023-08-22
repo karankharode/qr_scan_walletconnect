@@ -4,11 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qr_scan/data/repositories/wallet_repository.dart';
 import 'package:qr_scan/di/di.dart';
-import 'package:qr_scan/presentation/bloc/pairing/pairing_bloc.dart';
-import 'package:qr_scan/presentation/router.dart';
+import 'package:qr_scan/bloc/pairing/pairing_bloc.dart';
 import 'package:qr_scan/presentation/utils/core_import.dart';
 import 'package:qr_scan/presentation/utils/navigator_key.dart';
-import 'package:walletconnect_flutter_v2/walletconnect_flutter_v2.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});

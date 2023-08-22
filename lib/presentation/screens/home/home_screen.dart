@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:qr_scan/presentation/bloc/pairing/pairing_bloc.dart';
+import 'package:qr_scan/bloc/pairing/pairing_bloc.dart';
 import 'package:qr_scan/presentation/utils/core_import.dart';
 import 'package:qr_scan/presentation/utils/themes.dart';
 import 'package:qr_scan/presentation/widgets/base_app_bar.dart';
@@ -69,12 +69,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     physics: const BouncingScrollPhysics(),
                     child: StaggerAnimatedExpandedList(
                       children: [
-                        StaggerAnimatedWidget(
-                          children: [
-                            TopStatusRowWidget(
-                                status: state.pairingInfo != null ? "Paired" : "Not Paired"),
-                          ],
-                        ),
+                        TopStatusRowWidget(
+                            status: state.pairingInfo != null ? "Paired" : "Not Paired"),
                         CustomContainer(
                           child: Container(
                             margin: const EdgeInsets.only(top: 20, bottom: 15),
@@ -169,13 +165,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         state.scannedData?.scannedUriString != null
-                            ? StaggerAnimatedWidget(
-                                children: [
-                                  InfoTabBar(
-                                    state: state,
-                                  ),
-                                ],
-                              )
+                            ? InfoTabBar(
+                              state: state,
+                            )
                             : Container(),
                         height100
                       ],

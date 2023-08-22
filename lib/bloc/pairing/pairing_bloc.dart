@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:qr_scan/data/models/scanned_uri.dart';
+import 'package:qr_scan/data/locals/scanned_uri.dart';
 import 'package:qr_scan/data/repositories/wallet_repository.dart';
-import 'package:qr_scan/presentation/bloc/base_state.dart';
+import 'package:qr_scan/bloc/base_state.dart';
 import 'package:walletconnect_flutter_v2/walletconnect_flutter_v2.dart';
 
 part 'pairing_event.dart';

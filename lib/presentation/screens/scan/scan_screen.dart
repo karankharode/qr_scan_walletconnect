@@ -2,7 +2,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'package:qr_scan/presentation/bloc/pairing/pairing_bloc.dart';
+import 'package:qr_scan/bloc/pairing/pairing_bloc.dart';
 import 'package:scan/scan.dart' as scan;
 import 'package:qr_scan/presentation/utils/core_import.dart';
 import 'package:qr_scan/presentation/widgets/custom_widget_button.dart';
@@ -44,13 +44,13 @@ class _ScanScreenState extends State<ScanScreen> {
     if (result?.files.single.path != null) {
       String? resultDataFromImage = await scan.Scan.parse(result!.files.single.path!);
       await processQRCode(Barcode(resultDataFromImage, BarcodeFormat.qrcode, []), controller);
+      Navigator.pop(context);
     }
   }
 
   Future<void> processQRCode(Barcode scanData, QRViewController controller) async {
     if (scanData.code?.isNotEmpty ?? false) {
       context.read<PairingBloc>().add(QRScanned(scannedUriString: scanData.code ?? ""));
-      Navigator.pop(context);
     }
   }
 
