@@ -177,6 +177,21 @@ constants/
 ...
 ```
 
+### Unit Tests
+
+test/
+    |- wc_pair_test.dart
+
+This directory contains the unit tests for WalletConnect Web3Wallet pair method. It takes mock uri data and created a pair using Web3Wallet instance.
+
+The assertions check that the `PairingInfo.topic` and `PairingInfo.relay.protocol` match the
+URI’s path and “relay-protocol” query parameter.
+
+```
+expect(pairingInfo.relay.protocol, scannedData.scannedRelayProtocol);
+expect(pairingInfo.topic, scannedData.scannedTopic);
+```
+
 
 
 ## Conclusion
