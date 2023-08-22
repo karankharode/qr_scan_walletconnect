@@ -44,13 +44,13 @@ class _ScanScreenState extends State<ScanScreen> {
     if (result?.files.single.path != null) {
       String? resultDataFromImage = await scan.Scan.parse(result!.files.single.path!);
       await processQRCode(Barcode(resultDataFromImage, BarcodeFormat.qrcode, []), controller);
-      Navigator.pop(context);
     }
   }
 
   Future<void> processQRCode(Barcode scanData, QRViewController controller) async {
     if (scanData.code?.isNotEmpty ?? false) {
       context.read<PairingBloc>().add(QRScanned(scannedUriString: scanData.code ?? ""));
+      Navigator.pushNamedAndRemoveUntil(context, Routes.homeScreen, (route) => false);
     }
   }
 
